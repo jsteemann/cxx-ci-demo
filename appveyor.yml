@@ -2,11 +2,14 @@ branches:
   only:
     - master
 
-configuration: Release
+configuration: 
+  - Debug
+  - Release
 
 build:
 
 build_script:
+  - md %APPVEYOR_BUILD_FOLDER%\build
   - cd %APPVEYOR_BUILD_FOLDER%\build
   - cmake -G "Visual Studio 12 Win64" -DCMAKE_BUILD_TYPE=Release ..
   - cmake --build . --config Release
