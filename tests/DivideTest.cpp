@@ -36,8 +36,7 @@ TEST(DivideTest, DivisionByZero) {
   ValueInt v1(23);
   ValueInt v2(0);
 
-  ASSERT_FALSE(Calculator::divide(v1, v2)->isInt());
-  ASSERT_TRUE(std::isinf(Calculator::divide(v1, v2)->toDouble()));
+  ASSERT_THROW(Calculator::divide(v1, v2), char const*);
 }
 
 int main(int argc, char* argv[]) {

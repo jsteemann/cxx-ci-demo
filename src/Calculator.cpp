@@ -12,7 +12,7 @@ Value* Calculator::add(Value const& v1, Value const& v2) {
 
 Value* Calculator::divide(Value const& v1, Value const& v2) {
   if (v2.toDouble() == 0.0) {
-    return nullptr;
+    throw "division by zero";
   }
   // always cast to double, because result may not be integral
   return new ValueDouble(v1.toDouble() / v2.toDouble());
