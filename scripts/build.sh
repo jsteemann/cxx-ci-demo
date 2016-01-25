@@ -1,7 +1,3 @@
-echo "adjusting ulimits"
-ulimit -c unlimited -S # enable core files
-ulimit -a # print limits
-
 mkdir -p build # create build directory if it does not exists
 
 echo "building..."

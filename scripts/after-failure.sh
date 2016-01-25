@@ -1,5 +1,4 @@
 echo "after-failure..."
-ulimit -a # print ulimits
 
 cd build/tests
 COREFILE=$(find . -maxdepth 1 -name "core*" | head -n 1)
