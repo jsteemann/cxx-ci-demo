@@ -7,7 +7,7 @@ set(CMAKE_BINARY_DIR "${CMAKE_SOURCE_DIR}/build")
 message(STATUS "Build mode: ${CMAKE_BUILD_TYPE}")
 message(STATUS "Install base directory: ${CMAKE_INSTALL_PREFIX}")
   
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall -Wextra")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++11 -Wall -Wextra")
 
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
