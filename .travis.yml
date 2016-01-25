@@ -21,7 +21,6 @@ addons:
 install: 
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9"; fi
 - ulimit -c unlimited -S # enable core files
-- ulimit -a # print limits
 
 script: ./scripts/build.sh 
 after_failure: ./scripts/after-failure.sh

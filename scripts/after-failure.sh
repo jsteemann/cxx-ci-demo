@@ -1,6 +1,8 @@
 echo "after-failure..."
 
 cd build/tests
+ls -al
+
 COREFILE=$(find . -maxdepth 1 -name "core*" | head -n 1)
 if [[ -f "$COREFILE" ]]; then 
   echo "core file found: $COREFILE"
