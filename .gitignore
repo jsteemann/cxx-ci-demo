@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# exclude the CMake build directory
+build/
