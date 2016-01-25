@@ -32,7 +32,6 @@ addons:
     - clang
 
 install: 
-- echo "CXX: $CXX"
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9"; fi
 
 script: ./scripts/build.sh 
