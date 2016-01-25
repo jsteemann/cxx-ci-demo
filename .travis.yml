@@ -1,0 +1,23 @@
+
+branches:
+  only:
+    - master
+
+language: cpp
+compiler: 
+  - g++
+
+sudo: false
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - g++-4.9
+
+install: 
+- export CXX="g++-4.9"
+
+script: mkdir -p build; cd build; cmake .. && make && (cd tests && ctest -V)
+
