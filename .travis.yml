@@ -6,6 +6,7 @@ branches:
 language: cpp
 compiler: 
   - g++
+  - clang
 
 sudo: false
 
@@ -15,9 +16,10 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.9
+    - clang
 
 install: 
-- export CXX="g++-4.9"
+- if [ "$CXX" = "g++" ]; then export CXX="g++-4.9"; fi
 
 script: mkdir -p build; (cd build; cmake .. && make && (cd tests && ctest -V))
 
