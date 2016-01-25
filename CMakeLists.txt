@@ -16,3 +16,6 @@ find_package(Threads)
 add_subdirectory(src)
 add_subdirectory(include)
 
+# build tests
+add_subdirectory(tests)
+
