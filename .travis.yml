@@ -19,5 +19,5 @@ addons:
 install: 
 - export CXX="g++-4.9"
 
-script: mkdir -p build; cd build; cmake .. && make && (cd tests && ctest -V)
+script: mkdir -p build; (cd build; cmake .. && make && (cd tests && ctest -V))
 
