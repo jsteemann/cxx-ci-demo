@@ -15,7 +15,7 @@ struct Value {
   virtual bool isInt() const = 0;
   // conversion functions
   virtual int toInt() const = 0;
-  virtual int toDouble() const = 0;
+  virtual double toDouble() const = 0;
 };
 
 std::ostream& operator<<(std::ostream&, Value const&);
@@ -27,7 +27,7 @@ struct ValueInt final : public Value {
   std::string toString() const override final { return std::to_string(value_); }
   bool isInt() const override final { return true; }
   int toInt() const override final { return value_; }
-  int toDouble() const override final { return static_cast<double>(value_); }
+  double toDouble() const override final { return static_cast<double>(value_); }
  
   int value_;
 };
@@ -39,7 +39,7 @@ struct ValueDouble final : public Value {
   std::string toString() const override final { return std::to_string(value_); }
   bool isInt() const override final { return false; }
   int toInt() const override final { return static_cast<int>(value_); }
-  int toDouble() const override final { return value_; }
+  double toDouble() const override final { return value_; }
   
   double value_;
 };

@@ -1,4 +1,7 @@
 
+// for std::isinf
+#include <cmath>
+
 #include "gtest/gtest.h"
 
 #include "calculator/Calculator.h"
@@ -34,7 +37,7 @@ TEST(DivideTest, DivisionByZero) {
   ValueInt v2(0);
 
   ASSERT_FALSE(Calculator::divide(v1, v2)->isInt());
-  ASSERT_FLOAT_EQ(0., Calculator::divide(v1, v2)->toInt());
+  ASSERT_TRUE(std::isinf(Calculator::divide(v1, v2)->toDouble()));
 }
 
 int main(int argc, char* argv[]) {
