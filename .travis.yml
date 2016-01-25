@@ -21,5 +21,11 @@ addons:
 install: 
 - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9"; fi
 
-script: mkdir -p build; (cd build; cmake .. && make && (cd tests && ctest -V))
+script: 
+- ulimit -c unlimited -S # enable core files
+- mkdir -p build # create build directory if it does not exists
+- (cd build; cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=$CXX .. && make) # make
+- (cd tests && ctest -V) # run tests
+
+after_failure: ./scripts/after-failure.sh
 
