@@ -7,8 +7,13 @@ add_subdirectory(googletest/googletest)
 
 include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
 
-# build test
-add_executable(CalculatorTest CalculatorTest.cpp)
-target_link_libraries(CalculatorTest gtest calculator ${CMAKE_THREAD_LIBS_INIT})
+# build test for add
+add_executable(AddTest AddTest.cpp)
+target_link_libraries(AddTest gtest calculator ${CMAKE_THREAD_LIBS_INIT})
+add_test(AddTest AddTest)
+
+# build test for divide
+add_executable(DivideTest DivideTest.cpp)
+target_link_libraries(DivideTest gtest calculator ${CMAKE_THREAD_LIBS_INIT})
+add_test(DivideTest DivideTest)
     
-add_test(CalculatorTest CalculatorTest)

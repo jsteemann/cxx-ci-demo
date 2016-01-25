@@ -6,6 +6,7 @@
 
 struct Calculator {
   static Value* add(Value const&, Value const&);
+  static Value* divide(Value const&, Value const&);
 };
 
 #endif

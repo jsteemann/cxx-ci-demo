@@ -4,7 +4,7 @@
 #include "calculator/Calculator.h"
 #include "calculator/Value.h"
 
-TEST(CalculatorTest, AddTwoPositiveInts) {
+TEST(AddTest, AddTwoPositiveInts) {
   ValueInt v1(10);
   ValueInt v2(20);
 
@@ -12,7 +12,7 @@ TEST(CalculatorTest, AddTwoPositiveInts) {
   ASSERT_EQ(30, Calculator::add(v1, v2)->toInt());
 }
 
-TEST(CalculatorTest, AddTwoNegativeInts) {
+TEST(AddTest, AddTwoNegativeInts) {
   ValueInt v1(-10);
   ValueInt v2(-42);
 
@@ -20,7 +20,7 @@ TEST(CalculatorTest, AddTwoNegativeInts) {
   ASSERT_EQ(-52, Calculator::add(v1, v2)->toInt());
 }
 
-TEST(CalculatorTest, AddZeroToValue) {
+TEST(AddTest, AddZeroToValue) {
   ValueInt v1(25);
   ValueInt v2(0);
 
@@ -28,7 +28,7 @@ TEST(CalculatorTest, AddZeroToValue) {
   ASSERT_EQ(25, Calculator::add(v1, v2)->toInt());
 }
 
-TEST(CalculatorTest, AddValueToZero) {
+TEST(AddTest, AddValueToZero) {
   ValueInt v1(0);
   ValueInt v2(43);
 
